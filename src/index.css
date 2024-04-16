@@ -47,3 +47,15 @@
 .filter-tab .ant-select-selector {
   width: 150px !important;
 }
+
+@media screen and (max-width: 380px) {
+  .filters{
+    flex-direction: column;
+  }
+  .icon{
+    display: flex;
+    flex-direction: row;
+    transform: translateX(-1rem);
+    gap:1px;
+  }
+}

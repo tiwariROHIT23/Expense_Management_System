@@ -159,56 +159,57 @@ const HomePage = () => {
       <Header/>
         
       <div className="filters gap-2">
-        <div>
-              
-         
-        <h6 >Select Frequency</h6>
+          <div className="flex lg:gap-5 md:gap-5 sm:gap-5 gap-2">
+            <div>
+              <h6 >Select Frequency</h6>
 
-          <Select className="" value={frequency} onChange={(values) => setFrequency(values)}>
-            <Select.Option value="7">LAST 1 Week</Select.Option>
-            <Select.Option value="30">LAST 1 Month</Select.Option>
-            <Select.Option value="365">LAST 1 year</Select.Option>
-            <Select.Option value="custom">custom</Select.Option>
-          </Select>
-          {frequency === "custom" && (
-            <RangePicker
-              value={selectedDate}
-              onChange={(values) => setSelectedate(values)}
-            />
-          )}
-        </div>
-        <div className="filter-tab flex flex-col flex-wrap">
-          <h6>Select Type</h6>
-          <Select  value={type} onChange={(values) => setType(values)}>
-            <Select.Option value="all">ALL</Select.Option>
-            <Select.Option value="income">INCOME</Select.Option>
-            <Select.Option value="expense">EXPENSE</Select.Option>
-          </Select>
-        </div>
-        <div className="flex flex-col gap-4 md:flex-row lg:flex-row sm:flex-row">
-          <div className="switch-icons">
-            <UnorderedListOutlined
-              className={`mx-2 ${
-                viewData === "table" ? "active-icon" : "inactive-icon"
-              }`}
-              onClick={() => setViewData("table")}
-            />
-            <AreaChartOutlined
-              className={`mx-2 ${
-                viewData === "analytics" ? "active-icon" : "inactive-icon"
-              }`}
-              onClick={() => setViewData("analytics")}
-            />
-          </div>
-          <div className="max-w-32 items-center justify-center flex border-2 border-sky-500 shadow-lg hover:bg-sky-500 text-sky-500 hover:text-white duration-300 cursor-pointer active:scale-[0.98]">
-            <button
-              className="px-3 py-2 font-bold"
-              onClick={() => setShowModal(true)}
-            >
-              Add New
-            </button>
-          </div>
-        </div>
+              <Select className="" value={frequency} onChange={(values) => setFrequency(values)}>
+                <Select.Option value="7">LAST 1 Week</Select.Option>
+                <Select.Option value="30">LAST 1 Month</Select.Option>
+                <Select.Option value="365">LAST 1 year</Select.Option>
+                <Select.Option value="custom">custom</Select.Option>
+              </Select>
+              {frequency === "custom" && (
+                <RangePicker
+                  value={selectedDate}
+                  onChange={(values) => setSelectedate(values)}
+                />
+              )}
+            </div>
+            <div className="filter-tab flex flex-col flex-wrap">
+              <h6>Select Type</h6>
+              <Select  value={type} onChange={(values) => setType(values)}>
+                <Select.Option value="all">ALL</Select.Option>
+                <Select.Option value="income">INCOME</Select.Option>
+                <Select.Option value="expense">EXPENSE</Select.Option>
+              </Select>
+            </div>
+            </div>
+           <div className="icon flex flex-col gap-4 md:flex-row lg:flex-row sm:flex-row lg:gap-8 md:gap-8 sm:gap-8">
+                  <div className="switch-icons">
+                    <UnorderedListOutlined
+                      className={`mx-2 ${
+                        viewData === "table" ? "active-icon" : "inactive-icon"
+                      }`}
+                      onClick={() => setViewData("table")}
+                    />
+                    <AreaChartOutlined
+                      className={`mx-2 ${
+                        viewData === "analytics" ? "active-icon" : "inactive-icon"
+                      }`}
+                      onClick={() => setViewData("analytics")}
+                    />
+                  </div>
+                  <div className="max-w-32 items-center justify-center flex border-2 border-sky-500 shadow-lg hover:bg-sky-500 text-sky-500 hover:text-white duration-300 cursor-pointer active:scale-[0.98]">
+                    <button
+                      className="px-3 py-2 font-bold"
+                      onClick={() => setShowModal(true)}
+                    >
+                      Add New
+                    </button>
+                  </div>
+            </div>
+       
       </div>
       {
         loading ? (<Spinner pad={'pb-60'} top={'top-[30%]'}/> ) : (

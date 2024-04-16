@@ -20,7 +20,7 @@ const Header = () => {
     navigate("/login");
   };
   return (
-  <nav className=" text-white bg-[#161D29] font-extrabold flex flex-row w-full ">
+  <nav className=" text-white font-extrabold flex flex-row w-full bg-[#161D29]">
   <div className="w-screen shadow-2xl flex justify-between p-3" >
           
 
